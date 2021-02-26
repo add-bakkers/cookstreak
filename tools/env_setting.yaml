@@ -1,4 +1,4 @@
-name: stats2
+name: py38
 channels:
   - defaults
 dependencies:
@@ -9,3 +9,4 @@ dependencies:
   - matplotlib=3.3.2
   - opencv=4.0.1
   - scikit-learn=0.23.2
+  - bs4=4.9.3
