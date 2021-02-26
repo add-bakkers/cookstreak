@@ -10,3 +10,4 @@ dependencies:
   - opencv=4.0.1
   - scikit-learn=0.23.2
   - bs4=4.9.3
+prefix: C:user\<username>\Anaconda3\envs\py38
