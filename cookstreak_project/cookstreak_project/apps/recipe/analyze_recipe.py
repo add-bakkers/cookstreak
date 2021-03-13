@@ -6,14 +6,12 @@ from bs4 import BeautifulSoup
 def getRecipe(url):
     try:
         html = urlopen(url)
-    except HTTPError as e:
+    except HTTPError:
         return None
     try:
         html = urlopen(url)
         bs = BeautifulSoup(html, 'html.parser')
-        nameList = bs.find_all(class_="step_text")
-        for name in nameList:
-            print(name.get_text())
-    except AttributeError as e:
+        procedure_list = bs.find_all(class_="step_text")
+        return procedure_list
+    except AttributeError:
         return None
-    return title
