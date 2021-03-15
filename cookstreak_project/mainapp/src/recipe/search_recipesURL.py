@@ -30,3 +30,22 @@ def getURL(dishName):
         return result_list
     except AttributeError:
         return None
+
+def getURLfromLabel(url):
+     try:
+        html = urlopen(url)
+    except HTTPError:
+        return None
+    try:
+        html = urlopen(url)
+        bs = BeautifulSoup(html, 'html.parser')
+        title_list=bs.find_all(class_="recipe-title font13")
+        discription_list=bs.find_all(class_="recipe_description")
+        material_list=bs.find_all(class_="material ingredients")
+
+        result_list=[]
+        for i,j,k in zip(title_list,discription_list,material_list):
+            result_list.append([i.get_text(),j.get_text(),k.get_text()])
+        return result_list
+    except AttributeError:
+        return None
