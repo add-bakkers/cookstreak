@@ -26,13 +26,13 @@ def getURL(dishName):
 
         result_list=[]
         for i,j,k in zip(title_list,discription_list,material_list):
-            result_list.append([i.get_text(),j.get_text(),k.get_text()])
+            result_list.append([i.get_text(),j.get_text()[1:-1],k.get_text()[6:-1]])
         return result_list
     except AttributeError:
         return None
 
 def getURLfromLabel(url):
-     try:
+    try:
         html = urlopen(url)
     except HTTPError:
         return None
@@ -45,7 +45,7 @@ def getURLfromLabel(url):
 
         result_list=[]
         for i,j,k in zip(title_list,discription_list,material_list):
-            result_list.append([i.get_text(),j.get_text(),k.get_text()])
+            result_list.append([i.get_text(),j.get_text()[1:-1],k.get_text()[6:-1]])
         return result_list
     except AttributeError:
         return None
