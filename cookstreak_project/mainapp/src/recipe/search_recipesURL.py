@@ -23,10 +23,10 @@ def getURL(dishName):
         title_list=bs.find_all(class_="recipe-title font13")
         discription_list=bs.find_all(class_="recipe_description")
         material_list=bs.find_all(class_="material ingredients")
-
+        link_list=bs.find_all(class_="recipe-title font13")
         result_list=[]
-        for i,j,k in zip(title_list,discription_list,material_list):
-            result_list.append([i.get_text(),j.get_text()[1:-1],k.get_text()[6:-1]])
+        for i,j,k,l in zip(title_list,discription_list,material_list,link_list):
+            result_list.append([i.get_text(),j.get_text()[1:-1],k.get_text()[6:-1],"https://cookpad.com"+l.get("href")])
         return result_list
     except AttributeError:
         return None
@@ -42,10 +42,10 @@ def getURLfromLabel(url):
         title_list=bs.find_all(class_="recipe-title font13")
         discription_list=bs.find_all(class_="recipe_description")
         material_list=bs.find_all(class_="material ingredients")
-
+        link_list=bs.find_all(class_="recipe-title font13")
         result_list=[]
-        for i,j,k in zip(title_list,discription_list,material_list):
-            result_list.append([i.get_text(),j.get_text()[1:-1],k.get_text()[6:-1]])
+        for i,j,k,l in zip(title_list,discription_list,material_list,link_list):
+            result_list.append([i.get_text(),j.get_text()[1:-1],k.get_text()[6:-1],"https://cookpad.com"+l.get("href")])
         return result_list
     except AttributeError:
         return None
