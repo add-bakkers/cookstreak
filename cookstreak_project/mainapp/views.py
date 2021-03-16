@@ -13,8 +13,8 @@ class searchView(TemplateView):
         }
 
     def get(self,request):
-        return render(request,'templates/mainapp/recipe/search_recipes.html',self.params)
+        return render(request,'templates/mainapp/search_recipe.html',self.params)
 
     def post(self,request):
         self.params['data']=getURL(request.POST['dish name'])
-        return render(request,'templates/mainapp/recipe/search_recipes.html',self.params)
+        return render(request,'templates/mainapp/search_recipe.html',self.params)
