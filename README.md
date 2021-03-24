@@ -7,3 +7,5 @@ Anaconda3インストール済み
 ## tools
 このディレクトリで以下のコマンドを利用し仮想環境を構築してください
 conda env create -n cookstreak-framework -f env_setting.yaml
+
+kbaseが参戦した
